@@ -152,26 +152,39 @@ yarn
 yarn ios
 ```
 
-### Push a new beta build to TestFlight
-
-```bash
-fastlane ios beta
-```
-
 ## Setting Up Fastlane
 
 This one-time setup is required only when creating new projects. You do not need it to build foodie-react-native.
 I have added this section just to document how Fastlane was set up for foodie-react-native.
 
-### Create a private repo for code signing
-
-Create a private repo to store certificates and profiles (foodie-react-native-fastlane)
-
 ### Create an App Id for iOS
 
 ```bash
-fastlane produce -u <my-apple-id> -a com.publicis.sapient.foodiern --skip_itc    # create app id
+fastlane produce -u <my-apple-id> -a com.publicis.sapient.foodiern --skip_itc
 ```
+
+### Initialize Fastlane
+
+```bash
+cd ios
+
+# Create ./fastlane/Appfile & ./fastlane/Fastfile
+fastlane init
+```
+
+Now tweak Appfile & Fastfile as needed
+
+### Do a test build
+
+```bash
+fastlane ios test
+```
+
+### Setting Up Certificates Using Fastlane Match (optional)
+
+### Create a private repo for code signing
+
+Create a private repo to store certificates and profiles (foodie-react-native-fastlane)
 
 ### Initialize Fastlane Match
 
@@ -179,26 +192,4 @@ fastlane produce -u <my-apple-id> -a com.publicis.sapient.foodiern --skip_itc   
 cd ios
 fastlane match init         # creates ./fastlane/Matchfile with your git url
 fastlane match development  # creates a provisioning profile and certificate for development
-```
-
-### Initialize Fastlane
-
-Continue these steps in the ios directory.
-
-```bash
-fastlane init               # creates ./fastlane/Appfile & ./fastlane/Fastfile
-```
-
-### Raw Xcode Commands
-
-Used by `yarn ios`
-
-```bash
-xcodebuild -workspace FoodieRN.xcworkspace -configuration Debug -scheme FoodieRN -destination id=6DE30FFB-F4BD-40D1-BBBB-4C3DFA112C0C -derivedDataPath build/FoodieRN
-```
-
-Used by `fastlane ios beta`
-
-```bash
-xcodebuild -exportArchive -exportOptionsPlist /var/folders/l_/2jdc372x1wl_1vtgs907dycrd8_5nh/T/gym_config20200112-6576-1gt48wh.plist -archivePath '/Users/narbhati/Library/Developer/Xcode/Archives/2020-01-12/FoodieRN 2020-01-12 20.30.49.xcarchive' -exportPath /var/folders/l_/2jdc372x1wl_1vtgs907dycrd8_5nh/T/gym_output20200112-6576-m25xld -allowProvisioningUpdates``
 ```
