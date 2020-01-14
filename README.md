@@ -154,14 +154,21 @@ yarn ios
 
 ## Setting Up Fastlane
 
-This one-time setup is required only when creating new projects. You do not need it to build foodie-react-native.
-I have added this section just to document how Fastlane was set up for foodie-react-native.
+This one-time setup is required only when creating new projects. You do not need
+it to build foodie-react-native. I have added this section just to document how
+Fastlane was set up for foodie-react-native.
 
 ### Create an App Id for iOS
 
 ```bash
 fastlane produce -u <my-apple-id> -a com.publicis.sapient.foodiern --skip_itc
 ```
+
+### Create a provisioning profile for iOS
+
+Create a `development` provisioning profile for FoodieRN in Apple Developer
+Portal. Sign it with a developer certificate. Download the profile on your
+machine and double-click to install it.
 
 ### Initialize Fastlane
 
@@ -184,7 +191,8 @@ fastlane ios test
 
 ### Create a private repo for code signing
 
-Create a private repo to store certificates and profiles (foodie-react-native-fastlane)
+Create a private repo to store certificates and profiles
+(foodie-react-native-fastlane)
 
 ### Initialize Fastlane Match
 
