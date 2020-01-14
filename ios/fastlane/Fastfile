@@ -21,7 +21,8 @@ platform :ios do
     # increment_build_number(xcodeproj: "FoodieRN.xcodeproj")
     build_app(
       workspace: "FoodieRN.xcworkspace",
-      scheme: "FoodieRN"
+      scheme: "FoodieRN",
+      export_method: "development"
     )
     # upload_to_testflight
   end
