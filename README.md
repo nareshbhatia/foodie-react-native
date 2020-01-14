@@ -37,7 +37,7 @@ sudo xcodebuild -license
 DevToolsSecurity -enable
 ```
 
--   Installing an iOS Simulator in Xcode: open Xcode > Preferences... and select
+-   Install an iOS Simulator in Xcode: open Xcode > Preferences... and select
     the Components tab. Select a simulator with the corresponding version of iOS
     you wish to use.
 
