@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'yarn'
                 dir('ios') {
+                    sh 'pod install'
                     sh 'fastlane ios test'
                 }
             }
