@@ -144,6 +144,9 @@ cd ~/projects
 git clone https://github.com/nareshbhatia/foodie-react-native.git
 cd foodie-react-native
 yarn
+cd ios
+pod install
+cd ..
 ```
 
 ### Run the app in the simulator
