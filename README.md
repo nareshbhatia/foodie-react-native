@@ -41,32 +41,17 @@ DevToolsSecurity -enable
     the Components tab. Select a simulator with the corresponding version of iOS
     you wish to use.
 
-### Install Homebrew
+### Install Homebrew & Required Packages
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-### Install JDK 8
-
-```bash
-brew tap caskroom/versions
-brew cask install java8
-```
-
-### Install other Homebrew packages
-
-```bash
 brew install git wget vim watchman imagemagick cairo pixman jpeg librsvg
 ```
 
--   Image utilities are used with Fastlane badge plugin for auto-badging
-    development releases with build and revision
+### Install Node Version Manager & Node
 
-### Install Node version manager
-
-nvm is a bash script to manage multiple node.js versions. It is better than
-using the Node.js installer or Homebrew (see
+Node Version Manager (nvm) is a bash script to manage multiple node.js versions.
+It is better than using the Node.js installer or Homebrew (see
 [this article](https://pawelgrzybek.com/install-nodejs-installer-vs-homebrew-vs-nvm/)).
 
 ```bash
@@ -77,25 +62,34 @@ Now install the latest LTS version of Node.js
 
 ```bash
 nvm install 12.14.1
-nvm use 12.14.1
-nvm alias default 12.14.1
+source "$HOME/.bash_profile"
+node -v    # should print v12.14.1
 ```
 
 If you get the error `nvm: command not found`, then follow the instructions
 under
 [Troubleshooting on macOS](https://github.com/nvm-sh/nvm#troubleshooting-on-macos).
-I had to source my ~/.bashrc in .bash_profile using this line:
+
+Now install Yarn.
 
 ```bash
-source "$HOME/.bashrc"
+curl -o- -L https://yarnpkg.com/install.sh | bash
+source "$HOME/.bash_profile"
+yarn -v    # should print a version number like v1.21.1
 ```
+
+Note: Do note use Homebrew to install Yarn because we did not use it to install
+node. See [this issue](https://github.com/yarnpkg/website/issues/913).
 
 ### Install Ruby version manager
 
 ```bash
 curl -sSL https://get.rvm.io | bash -s stable
+# close and reopen your terminal to enable rvm
+# or source "$HOME/.rvm/scripts/rvm"
 rvm install ruby-2.7.0
 rvm use ruby-2.7.0
+ruby -v    # should print a version number like 2.7.0p0
 ```
 
 ### Install Ruby gems & Fastlane plugins
@@ -107,16 +101,6 @@ gem install 'fastlane-plugin-get_version_name'
 gem install 'fastlane-plugin-versioning'
 gem install 'fastlane-plugin-yarn'
 gem install 'fastlane-plugin-badge'
-```
-
-### Install Yarn
-
-Do note use Homebrew to install Yarn. It can't do this because we did not use
-Homebrew to install node. See
-[this issue](https://github.com/yarnpkg/website/issues/913).
-
-```bash
-curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
 ### Setup Cocoapods
