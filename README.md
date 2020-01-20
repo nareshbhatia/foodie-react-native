@@ -13,6 +13,25 @@ These instructions are based on the excellent
 [React Native DevOps Guide](https://medium.com/@tgpski/setting-up-a-jenkins-agent-part-1-react-native-devops-guide-4c8b763b0961)
 by Tyler Pate. You will need a Mac with MacOS installed on it.
 
+### Install Z Shell
+
+Starting MacOS 10.15 (Catalina), the default shell is zsh. If your default shell
+is not zsh, I highly recommend changing it to zsh.
+
+Execute the following command in your terminal window to find out your default
+shell:
+
+```bash
+echo $SHELL
+```
+
+If you see something other than `/bin/zsh`, they zsh is not your default shell.
+Change it using the following command:
+
+```bash
+chsh -s /bin/zsh
+```
+
 ### Install Xcode
 
 -   Open app store
@@ -62,7 +81,7 @@ Now install the latest LTS version of Node.js
 
 ```bash
 nvm install 12.14.1
-source "$HOME/.bash_profile"
+source "$HOME/.zshrc"
 node -v    # should print v12.14.1
 ```
 
@@ -74,7 +93,7 @@ Now install Yarn.
 
 ```bash
 curl -o- -L https://yarnpkg.com/install.sh | bash
-source "$HOME/.bash_profile"
+source "$HOME/.zshrc"
 yarn -v    # should print a version number like v1.21.1
 ```
 
@@ -109,9 +128,9 @@ gem install 'fastlane-plugin-badge'
 pod setup
 ```
 
-### Setup ~/.bashrc
+### Setup ~/.zshrc
 
-Export the following variables from ~/.bashrc
+Export the following variables from ~/.zshrc
 
 ```bash
 # Fastlane
