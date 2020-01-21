@@ -25,12 +25,15 @@ shell:
 echo $SHELL
 ```
 
-If you see something other than `/bin/zsh`, they zsh is not your default shell.
+If you see something other than `/bin/zsh`, then zsh is not your default shell.
 Change it using the following command:
 
 ```bash
 chsh -s /bin/zsh
 ```
+
+Now close the terminal and reopen it. Type `echo $SHELL` to make sure that zsh
+is the default.
 
 ### Install Xcode
 
@@ -43,6 +46,11 @@ chsh -s /bin/zsh
 ```bash
 xcode-select --install
 ```
+
+-   Make sure CLI tools are correctly installed: open Xcode > Preferences >
+    Locations. The command line tools dropdown should not be blank. It should
+    show a version of CLI tools. If not select the latest version from the
+    dropdown.
 
 -   Sign legal agreement
 
@@ -100,7 +108,7 @@ yarn -v    # should print a version number like v1.21.1
 Note: Do note use Homebrew to install Yarn because we did not use it to install
 node. See [this issue](https://github.com/yarnpkg/website/issues/913).
 
-### Install Ruby version manager
+### Install Ruby Version Manager & Ruby
 
 ```bash
 curl -sSL https://get.rvm.io | bash -s stable
@@ -111,7 +119,7 @@ rvm use ruby-2.7.0
 ruby -v    # should print a version number like 2.7.0p0
 ```
 
-### Install Ruby gems & Fastlane plugins
+### Install Required Ruby Gems
 
 ```bash
 gem install fastlane badge cocoapods
