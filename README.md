@@ -138,7 +138,7 @@ pod setup
 
 ### Setup ~/.zshrc
 
-Export the following variables from ~/.zshrc
+Export the following variables at the top of your ~/.zshrc file:
 
 ```bash
 # Fastlane
@@ -146,9 +146,29 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
 
+At this point your .zshrc file should look something like this. Make sure that each section is in the correct order.
+
+```bash
+# Fastlane
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Node Version Manager (NVM)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Ruby Version Manager (RVM)
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+```
+
 ### Clone this repo
 
-Clone this repo wherever you keep projects and install dependencies For example:
+Clone this repo wherever you keep projects and install dependencies. For example:
 
 ```bash
 cd ~/projects
