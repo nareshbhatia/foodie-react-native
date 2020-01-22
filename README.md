@@ -146,7 +146,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
 
-At this point your .zshrc file should look something like this. Make sure that each section is in the correct order.
+At this point your .zshrc file should look something like this. Make sure that
+each section is in the correct order.
 
 ```bash
 # Fastlane
@@ -168,7 +169,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 ### Clone this repo
 
-Clone this repo wherever you keep projects and install dependencies. For example:
+Clone this repo wherever you keep projects and install dependencies. For
+example:
 
 ```bash
 cd ~/projects
