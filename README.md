@@ -194,17 +194,18 @@ This one-time setup is required only when creating new projects. You do not need
 it to build foodie-react-native. I have added this section just to document how
 Fastlane was set up for foodie-react-native.
 
-### Create an App Id for iOS
+### Create an App Id and provisioning profile for iOS
+
+-   Create an AppId for FoodieRN in Apple Developer Portal. Alternately you can
+    create it using Fastlane:
 
 ```bash
 fastlane produce -u <my-apple-id> -a com.publicis.sapient.foodiern --skip_itc
 ```
 
-### Create a provisioning profile for iOS
-
-Create a `development` provisioning profile for FoodieRN in Apple Developer
-Portal. Sign it with a developer certificate. Download the profile on your
-machine and double-click to install it.
+-   Create a `development` provisioning profile for FoodieRN in Apple Developer
+    Portal. Sign it with a developer certificate. Download the profile on your
+    machine and double-click to install it.
 
 ### Initialize Fastlane
 
@@ -213,15 +214,24 @@ cd ios
 
 # Create ./fastlane/Appfile & ./fastlane/Fastfile
 fastlane init
+# Choose the option you want
+# I chose option 2 - Automatic beta distribution to TestFlight.
 ```
 
-Now tweak Appfile & Fastfile as needed
+This generates a new directory called `fastlane` with two files: `Fastfile` &
+`Appfile`. Tweak these files as needed.
 
 ### Do a test build
 
 ```bash
 fastlane ios test
 ```
+
+This will generate two files in the ios directory:
+
+1. FoodieRN.ipa: This is the application archive that can be deployed to a
+   store.
+2. FoodieRN.app.dSYM.zip: This file contains the debug symbols for the app.
 
 ### Setting Up Certificates Using Fastlane Match (optional)
 
