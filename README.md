@@ -221,13 +221,23 @@ fastlane init
 This generates a new directory called `fastlane` with two files: `Fastfile` &
 `Appfile`. Tweak these files as needed.
 
+Move the `fastlane` directory to the project root folder. This allows running
+fastlane from the project root which is much more convenient.
+
+Edit Fastfile to point workspace to the correct directory
+
+    workspace: "./ios/FoodieRN.xcworkspace"
+
 ### Do a test build
+
+Change your working directory to the project root and execute the following
+command:
 
 ```bash
 fastlane ios test
 ```
 
-This will generate two files in the ios directory:
+This will generate two files in the project root:
 
 1. FoodieRN.ipa: This is the application archive that can be deployed to a
    store.

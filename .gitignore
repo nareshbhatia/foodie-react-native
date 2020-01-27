@@ -18,8 +18,6 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.hmap
-*.ipa
-*.dSYM.zip
 *.xcuserstate
 project.xcworkspace
 
@@ -54,9 +52,11 @@ buck-out/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/
 
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+*.ipa
+*.dSYM.zip
 
 # Bundle artifact
 *.jsbundle
