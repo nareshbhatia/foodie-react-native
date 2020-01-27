@@ -185,6 +185,7 @@ cd ..
 ### Run the app in the simulator
 
 ```bash
+cp env/env.dev .env  # initialize for dev environment
 yarn ios
 ```
 
@@ -228,13 +229,13 @@ Edit Fastfile to point workspace to the correct directory
 
     workspace: "./ios/FoodieRN.xcworkspace"
 
-### Do a test build
+### Do a dev build
 
 Change your working directory to the project root and execute the following
 command:
 
 ```bash
-fastlane ios test
+fastlane ios dev
 ```
 
 This will generate two files in the project root:

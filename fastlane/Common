@@ -1,0 +1,9 @@
+def copy_env_for_build_type(buildType)
+  # Copies env files to project root
+  # filename format: env.[buildType]
+  #
+  # example: $PROJECT_ROOT/env/env.release
+
+  dir = File.expand_path('..', Dir.pwd)
+  sh('cp', '%s/env/env.%s' % [dir, buildType], '%s/.env' % dir)
+end
