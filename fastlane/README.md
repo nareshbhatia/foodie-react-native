@@ -20,7 +20,7 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane ios dev
 ```
-Create a new test build
+Create a new dev build
 
 ----
 
