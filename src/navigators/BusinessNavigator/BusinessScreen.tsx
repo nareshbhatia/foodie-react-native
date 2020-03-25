@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#CCD2F2'
-    }
+        backgroundColor: '#CCD2F2',
+    },
 });
 
 export const BusinessScreen = () => {

@@ -10,25 +10,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: 56,
-        backgroundColor: '#556CD6'
+        backgroundColor: '#556CD6',
     },
     title: {
         color: '#FFFFFF',
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize: 18,
     },
     content: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#CCD2F2'
+        backgroundColor: '#CCD2F2',
     },
     footer: {
         alignItems: 'center',
         justifyContent: 'center',
         height: 30,
-        backgroundColor: '#FBC02D'
-    }
+        backgroundColor: '#FBC02D',
+    },
 });
 
 type SearchNavigationProp = StackNavigationProp<
