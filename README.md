@@ -13,6 +13,13 @@ These instructions are based on the excellent
 [React Native DevOps Guide](https://medium.com/@tgpski/setting-up-a-jenkins-agent-part-1-react-native-devops-guide-4c8b763b0961)
 by Tyler Pate. You will need a Mac with MacOS installed on it.
 
+### Install Homebrew & Required Packages
+
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install git wget vim watchman imagemagick cairo pixman jpeg librsvg
+```
+
 ### Install Z Shell
 
 Starting MacOS 10.15 (Catalina), the default shell is zsh. If your default shell
@@ -34,6 +41,20 @@ chsh -s /bin/zsh
 
 Now close the terminal and reopen it. Type `echo $SHELL` to make sure that zsh
 is the default.
+
+### Install Oh My Zsh
+
+Oh My Zsh is a delightful framework for managing your Zsh configuration. It
+comes bundled with thousands of helpful functions, helpers, plugins and themes.
+Enter the following command in your shell to install Oh My Zsh:
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+The installation script creates a backup of your .zshrc file, and then replaces
+it with its own version. If you had any important configuration in your original
+.zshrc, copy it over to your new .zshrc.
 
 ### Install Xcode
 
@@ -67,13 +88,6 @@ DevToolsSecurity -enable
 -   Install an iOS Simulator in Xcode: open Xcode > Preferences... and select
     the Components tab. Select a simulator with the corresponding version of iOS
     you wish to use.
-
-### Install Homebrew & Required Packages
-
-```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install git wget vim watchman imagemagick cairo pixman jpeg librsvg
-```
 
 ### Install Node Version Manager & Node
 
@@ -146,8 +160,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
 
-At this point your .zshrc file should look something like this. Make sure that
-each section is in the correct order.
+At this point, the end of your .zshrc file should look something like this. Make
+sure that each section is in the correct order.
 
 ```bash
 # Fastlane
